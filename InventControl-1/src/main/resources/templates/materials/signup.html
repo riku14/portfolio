@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"></meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- CSS読込 -->
+  <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+  <link rel="stylesheet" th:href="@{/css/materials/signup.css}">
+  <!-- JS読込 -->
+  <script th:src="@{/webjars/jquery/jquery.min.js}" defer></script>
+  <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}" defer></script>
+  <title>資材登録</title>
+</head>
+
+<body class="bg-light">
+    <form id="signup-form" method="post" action="/materials/signup" class="form-signup" th:object="${signupForm}">
+    <h1 class="text-center">資材登録</h1>
+    <!--資材名-->
+    <div class="form-group">
+        <label for="name">資材名</label>
+        <input type="text" class="form-control" th:field="*{name}"/>
+    </div>
+    
+    <!--適正在庫数-->
+    <div class="form-group">
+        <label for="tekisei">適正在庫数</label>
+        <input type="text" class="form-control" th:field="*{tekisei}"/>
+    </div>
+    
+    <!--在庫数-->
+    <div class="form-group">
+        <label for="zaiko">在庫数</label>
+        <input type="text" class="form-control" th:field="*{zaiko}"/>
+    </div>
+    
+    <!--価格-->
+    <div class="form-group">
+        <label for="price">価格</label>
+        <input type="text" class="form-control" th:field="*{price}"/>
+    </div>
+    
+    <!--資材詳細-->
+    <div class="form-group">
+        <label for="detail">資材詳細</label>
+        <input type="text" class="form-control" th:field="*{detail}"/>
+    </div>
+    
+    <!--登録ボタン-->
+    <input type="submit" value="資材登録" class="btn btn-primary w-100 mt-3"/>
+    </form>
+</body>    
+</html>
