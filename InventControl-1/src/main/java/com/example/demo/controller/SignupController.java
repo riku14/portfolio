@@ -29,7 +29,7 @@ public class SignupController {
 	@PostMapping("/signup")
 	public String postSignup(@ModelAttribute SignupForm form) {
 		
-		w
+		
 		
 		log.info(form.toString());
 		
