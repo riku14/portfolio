@@ -25,7 +25,7 @@ public class SignupController {
 	}
 	
 	
-	//資材登録処理
+	//資材登録処
 	@PostMapping("/signup")
 	public String postSignup(@ModelAttribute SignupForm form) {
 		
