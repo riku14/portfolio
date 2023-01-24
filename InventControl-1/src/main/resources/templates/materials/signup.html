@@ -17,32 +17,37 @@
     <h1 class="text-center">資材登録</h1>
     <!--資材名-->
     <div class="form-group">
-        <label for="name">資材名</label>
-        <input type="text" class="form-control" th:field="*{name}"/>
+        <label for="name" th:text="#{name}"></label>
+        <input type="text" class="form-control" th:field="*{name}" th:errorclass="is-invalid"/>
+        <div class="invalid-feedback" th:errors="*{name}"></div>
     </div>
     
     <!--適正在庫数-->
     <div class="form-group">
         <label for="tekisei">適正在庫数</label>
-        <input type="text" class="form-control" th:field="*{tekisei}"/>
+        <input type="text" class="form-control" th:field="*{tekisei}" th:errorclass="is-invalid"/>
+         <div class="invalid-feedback" th:errors="*{tekisei}"></div>
     </div>
     
     <!--在庫数-->
     <div class="form-group">
         <label for="zaiko">在庫数</label>
-        <input type="text" class="form-control" th:field="*{zaiko}"/>
+        <input type="text" class="form-control" th:field="*{zaiko}" th:errorclass="is-invalid"/>
+         <div class="invalid-feedback" th:errors="*{zaiko}"></div>
     </div>
     
     <!--価格-->
     <div class="form-group">
         <label for="price">価格</label>
-        <input type="text" class="form-control" th:field="*{price}"/>
+        <input type="text" class="form-control" th:field="*{price}" th:errorclass="is-invalid"/>
+         <div class="invalid-feedback" th:errors="*{price}"></div>
     </div>
     
     <!--資材詳細-->
     <div class="form-group">
         <label for="detail">資材詳細</label>
-        <input type="text" class="form-control" th:field="*{detail}"/>
+        <input type="text" class="form-control" th:field="*{detail}" th:errorclass="is-invalid"/>
+         <div class="invalid-feedback" th:errors="*{detail}"></div>
     </div>
     
     <!--登録ボタン-->
