@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.domain.materials.model.Materials;
 import com.example.demo.domain.materials.service.MaterialsService;
@@ -34,6 +35,7 @@ public class MaterialsServiceImpl implements MaterialsService {
 	
 	
 	/**資材情報更新*/
+	@Transactional
 	@Override
 	public void updateMaterials(String name, Integer tekisei, Integer zaiko, Integer price, String detail) {
 		mapper.updateOne(name, tekisei, zaiko, price, detail);

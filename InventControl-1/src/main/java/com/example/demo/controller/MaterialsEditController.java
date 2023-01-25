@@ -13,8 +13,11 @@ import com.example.demo.domain.materials.model.Materials;
 import com.example.demo.domain.materials.service.MaterialsService;
 import com.example.demo.form.MaterialsEditForm;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Controller
 @RequestMapping("/materials")
+@Slf4j
 public class MaterialsEditController {
 	
 	@Autowired
@@ -44,8 +47,12 @@ public class MaterialsEditController {
 	@PostMapping(value = "/edit", params = "update")
 	public String updateMaterials(MaterialsEditForm form, Model model) {
 		
+		try {
 		//資材情報を更新
 		materialsService.updateMaterials(form.getName(), form.getZaiko(), form.getTekisei(), form.getPrice(), form.getDetail() );
+		}catch(Exception e) {
+			log.error("資材更新でエラー", e);
+		}
 		
 		//資材一覧画面に戻る
 		return "redirect:/materials/list";
