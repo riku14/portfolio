@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<!-- Mapperとxmlのマッピング -->
+<mapper namespace="com.example.demo.repository.MaterialsMapper">
+
+<!--マッピング定義-->
+    <resultMap  type="com.example.demo.domain.materials.model.Materials" id="materials" >
+        <id column="name" property="name"/>
+        <id column="tekisei" property="tekisei"/>
+        <id column="zaiko" property="zaiko"/>
+        <id column="price" property="price"/>
+        <id column="detail" property="detail"/>
+    </resultMap>
+
+    <!-- 資材１件登録-->
+    <insert id="insertOne">
+        insert into materials(name, tekisei, zaiko, price, detail)
+        
+        values(#{name}, #{tekisei}, #{zaiko}, #{price}, #{detail})
+    </insert>
+    
+    <!--資材複数取得（複数）-->
+    <select id="findMany" resultType="Materials">
+    select * from materials
+    <where>
+            <if test="name != null">
+                name like '%' || #{name} || '%'
+            </if>
+        </where>
+    </select>
+    
+    <!--資材検索１件-->
+    <select id="findOne" resultMap="materials">
+        select * from materials
+        where name = #{name}
+    </select>
+    
+    
+    
+    <!--資材更新（編集）-->
+    <update id="updateOne">
+    update materials set tekisei = #{tekisei} , zaiko = #{zaiko} , price = #{price} , detail = #{detail}
+    where name = #{name}
+    </update>
+    
+    <!--資材削除-->
+    <delete id="deleteOne">
+    delete from materials 
+    where name = #{name}
+    </delete>
+    
+</mapper>

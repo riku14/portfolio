@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{layout/layout}">
+<head>
+  <meta charset="UTF-8"></meta>
+  <title>資材詳細一覧</title>
+  <!-- 個別CSS読込 -->
+  <link rel="stylesheet" th:href="@{/css/materials/list.css}">
+</head>
+<body>
+    <div layout:fragment="content">
+        <div class="header border-bottom">
+          <h1 class="h2">資材詳細一覧</h1>
+        </div>
+        <!--検索-->
+        <div class="mb-4">
+            <form id="materials-search-form" method="post" th:action="@{/materials/list}" class="form-inline" th:object="${materialsListForm}">
+                <div class="form-group">
+                    <label for="name" class="mr-2">資材名</label>
+                    <input type="text" class="form-control" th:field="*{name}"/>
+                </div>
+                <button class="btn btn-primary" type="submit">検索</button>
+            </form>
+        </div> 
+        
+        <!--一覧表示-->
+        <div>
+            <table class="table table-striped table-bordered table-hover">
+                <thead class="thead-light">
+                <tr>
+                    <th class="th-width">資材名</th>
+                    <th class="th-width">適正在庫数</th>
+                    <th class="th-width">在庫数</th>
+                    <th class="th-width">価格</th>
+                    <th class="th-width">詳細</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="item:${materialsList}">
+                        <td th:text="${item.name}"></td>
+                        <td th:text="${item.tekisei}"></td>
+                        <td th:text="${item.zaiko}"></td>
+                        <td th:text="${item.price}"></td>
+                        <td th:text="${item.detail}"></td>
+                        <td>
+                            <a class="btn btn-primary" th:href="@{'/materials/edit/' + ${item.name}}">
+                            編集
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
