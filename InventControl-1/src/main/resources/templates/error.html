@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<titlle>Error</titlle>
+</head>
+<body>
+    <h1 th:text="${status} + ' ' + ${error}"></h1>
+    <p th:text="${message}"></p>
+    <p>ログイン画面に戻ってください</p>
+    <form method="post" th:action="@{/logout}">
+        <button class="btn btn-link" type="submit"></button>
+    </form>
+</body>
+</html>
+   
+   
+   <!--まだ使用していない--> 

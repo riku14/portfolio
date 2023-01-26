@@ -37,7 +37,7 @@ public class SignupController {
 	}
 	
 	
-	//資材登録処理
+	/**資材登録処理*/
 	@PostMapping("/signup")
 	public String postSignup(Model model, @ModelAttribute @Validated SignupForm form, BindingResult bindingResult) {
 		
@@ -60,5 +60,7 @@ public class SignupController {
 		//資材詳細一覧画面に遷移
 		return "redirect:/materials/list";
 	}
+	
+	
 
 }
