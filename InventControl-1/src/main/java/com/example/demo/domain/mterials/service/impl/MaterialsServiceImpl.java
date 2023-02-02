@@ -42,8 +42,15 @@ public class MaterialsServiceImpl implements MaterialsService {
 	}
 	
 	/**資材削除*/
+	@Override
 	public void deleteMaterials(String name) {
 		int count = mapper.deleteOne(name);
+	}
+	
+	/**資材取得（cart）*/
+	@Override
+	public Materials getCart(String name){
+		return mapper.cart(name);
 	}
 	
 

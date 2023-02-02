@@ -37,7 +37,7 @@ public class MaterialsEditController {
 		form = modelMapper.map(materials, MaterialsEditForm.class);  //modelにコピーしているものをformに戻す(formを変更するため)
 		
 		//Modelに登録
-		model.addAttribute("materialsEditForm", form);
+		model.addAttribute("materialsEditForm", form); //変更後の情報をModelに登録
 		
 		//資材情報の編集画面に表示
 		return "materials/edit";

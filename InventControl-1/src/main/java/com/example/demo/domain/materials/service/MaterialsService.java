@@ -23,6 +23,11 @@ public interface MaterialsService {
 	
 	/**資材削除*/
 	public void deleteMaterials(String name);
+	
+	//資材発注確認の画面
+	/**資材取得（cart）*/
+	public Materials getCart(String name);
+
 
 
 }

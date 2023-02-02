@@ -28,6 +28,11 @@ public interface MaterialsMapper {
 	/**資材削除*/
 	public int deleteOne(@Param("name") String name); 
 	
+	//資材発注画面の機能
+	/**資材取得（発注）*/
+	public Materials cart(String name);
+
+	
 	
 
 }

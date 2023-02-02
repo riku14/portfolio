@@ -5,4 +5,7 @@ CREATE TABLE IF NOT EXISTS materials (
   , zaiko INT
   , price INT
   , detail VARCHAR(50)
+  , kosuu INT
+  , goukei INT
+  ,orderDay DATE
 );

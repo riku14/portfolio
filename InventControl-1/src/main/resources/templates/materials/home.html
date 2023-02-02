@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{layout/layout}">
+<head>
+  <meta charset="UTF-8"></meta>
+  <title>HOME</title>
+  <!-- 個別CSS読込 -->
+  <link rel="stylesheet" th:href="@{/css/materials/home.css}">
+</head>
+<body>
+    <div layout:fragment="content">
+        <div class="header border-bottom">
+          <h1 class="h2">HOME</h1>
+        </div>
+        <div class="wrap">
+          <div class="item">
+              <a th:href="@{'/materials/list'}">
+                <img src = "../images/logout.jpeg" alt = "資材詳細一覧">
+                <h2>資材詳細一覧</h2>
+              </a>
+          </div>
+        </div>
+    </div>    
+</body>
+</html>

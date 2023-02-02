@@ -12,6 +12,9 @@
         <id column="zaiko" property="zaiko"/>
         <id column="price" property="price"/>
         <id column="detail" property="detail"/>
+        <id column="kosuu" property="kosuu"/>
+        <id column="goukei" property="goukei"/>
+        <id column="orderDay" property="orderDay"/>
     </resultMap>
 
     <!-- 資材１件登録-->
@@ -50,5 +53,17 @@
     delete from materials 
     where name = #{name}
     </delete>
+    
+    <!--発注資材取得-->
+    <select id="cart" resultMap="materials">
+    select 
+        name,
+        detail, 
+        price,
+        kosuu, 
+        goukei 
+    from materials
+        where name = #{name}
+    </select>
     
 </mapper>
