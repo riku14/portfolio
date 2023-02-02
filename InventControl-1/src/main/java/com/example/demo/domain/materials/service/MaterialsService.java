@@ -27,6 +27,9 @@ public interface MaterialsService {
 	//資材発注確認の画面
 	/**資材取得（cart）*/
 	public Materials getCart(String name);
+	
+	/**資材発注処理*/
+	public void updateCart(String name,Integer kosuu, Integer goukei, Integer zaiko);
 
 
 

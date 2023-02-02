@@ -49,7 +49,7 @@ public class MaterialsEditController {
 		
 		try {
 		//資材情報を更新
-		materialsService.updateMaterials(form.getName(), form.getZaiko(), form.getTekisei(), form.getPrice(), form.getDetail() );
+		materialsService.updateMaterials(form.getName(),  form.getTekisei(),form.getZaiko(), form.getPrice(), form.getDetail() );
 		}catch(Exception e) {
 			log.error("資材更新でエラー", e);
 		}

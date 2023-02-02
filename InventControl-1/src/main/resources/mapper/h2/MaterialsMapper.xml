@@ -66,4 +66,13 @@
         where name = #{name}
     </select>
     
+    
+    <!--資材更新（発注）-->
+    <update id="updateCart">
+    update materials set goukei = #{goukei}, zaiko = #{kosuu} + zaiko
+    where name = #{name}
+    </update>
+    
+    
+    
 </mapper>

@@ -53,5 +53,12 @@ public class MaterialsServiceImpl implements MaterialsService {
 		return mapper.cart(name);
 	}
 	
+	/**資材発注処理*/
+	@Transactional
+	@Override
+	public void updateCart(String name,Integer kosuu, Integer goukei, Integer zaiko) {
+		mapper.updateCart(name, kosuu, goukei, zaiko);
+	}
+	
 
 }

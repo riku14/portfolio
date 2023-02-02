@@ -6,14 +6,19 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.demo.domain.materials.model.Materials;
 import com.example.demo.domain.materials.service.MaterialsService;
 import com.example.demo.form.CartForm;
+import com.example.demo.form.MaterialsEditForm;
+
+import lombok.extern.slf4j.Slf4j;
 
 @Controller
 @RequestMapping("/materials")
+@Slf4j
 public class CartController {
 	
 	@Autowired
@@ -37,6 +42,21 @@ public class CartController {
 		
 		//発注確認画面表示
 		return "materials/cart";
+	}
+	
+	/***/
+	@PostMapping(value = "/cart", params = "update")
+	public String updateMaterials(CartForm form, Model model) {
+		
+		try {
+		//資材情報を更新
+		materialsService.updateCart(form.getName(),form.getKosuu(), form.getGoukei() , form.getZaiko());
+		}catch(Exception e) {
+			log.error("資材更新でエラー", e);
+		}
+		
+		//資材一覧画面に戻る
+		return "redirect:/materials/list";
 	}
 	
 

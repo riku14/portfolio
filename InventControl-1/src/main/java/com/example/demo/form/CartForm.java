@@ -9,4 +9,6 @@ public class CartForm {
 	private Integer price;
 	private Integer kosuu;
 	private Integer goukei;
+	private Integer zaiko;
+	
 }
