@@ -1,5 +1,6 @@
 package com.example.demo.domain.materials.service;
 
+import java.util.Date;
 import java.util.List;
 
 import com.example.demo.domain.materials.model.Materials;
@@ -29,7 +30,7 @@ public interface MaterialsService {
 	public Materials getCart(String name);
 	
 	/**資材発注処理*/
-	public void updateCart(String name,Integer kosuu, Integer goukei, Integer zaiko);
+	public void updateCart(String name,Integer kosuu, Integer goukei, Integer zaiko, Integer price, Date orderDay);
 	
 	/**資材登録*/
 	public void signupOrder(Materials materials);

@@ -69,7 +69,7 @@
     
     <!--資材更新（発注）-->
     <update id="updateCart">
-    update materials set goukei = #{goukei}, zaiko = #{kosuu} + zaiko
+    update materials set  zaiko = #{kosuu} + zaiko, kosuu = #{kosuu}, goukei = #{kosuu} * price, orderDay = CURRENT_DATE
     where name = #{name}
     </update>
     

@@ -15,6 +15,7 @@ import com.example.demo.form.CartForm;
 import com.example.demo.form.MaterialsEditForm;
 import com.example.demo.form.OrderListForm;
 
+import groovy.time.BaseDuration.From;
 import lombok.extern.slf4j.Slf4j;
 
 @Controller
@@ -51,7 +52,7 @@ public class CartController {
 		
 		try {
 			//資材情報を更新
-			materialsService.updateCart(form.getName(),  form.getKosuu(),form.getZaiko(), form.getGoukei() );
+			materialsService.updateCart(form.getName(),  form.getKosuu(),form.getZaiko(), form.getGoukei(), form.getPrice(), form.getOrderDay() );
 			}catch(Exception e) {
 				log.error("資材f発注でエラー", e);
 			}

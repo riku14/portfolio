@@ -1,5 +1,7 @@
 package com.example.demo.form;
 
+import java.util.Date;
+
 import lombok.Data;
 
 @Data
@@ -10,5 +12,5 @@ public class CartForm {
 	private Integer kosuu;
 	private Integer goukei;
 	private Integer zaiko;
-	
+	private Date orderDay;
 }

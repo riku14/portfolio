@@ -1,5 +1,6 @@
 package com.example.demo.domain.mterials.service.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,8 +57,8 @@ public class MaterialsServiceImpl implements MaterialsService {
 	/**資材発注処理*/
 	@Transactional
 	@Override
-	public void updateCart(String name,Integer kosuu, Integer goukei, Integer zaiko) {
-		mapper.updateCart(name, kosuu, goukei, zaiko);
+	public void updateCart(String name,Integer kosuu, Integer goukei, Integer zaiko, Integer price, Date orderDay)  {
+		mapper.updateCart(name, kosuu, goukei, zaiko, price, orderDay);
 	}
 	
 	/**資材発注情報記録*/

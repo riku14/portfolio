@@ -1,5 +1,6 @@
 package com.example.demo.repository;
 
+import java.util.Date;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
@@ -33,7 +34,7 @@ public interface MaterialsMapper {
 	public Materials cart(String name);
 	
 	/**資材発注処理*/
-	public void updateCart(@Param("name") String name, @Param("kosuu") Integer kosuu, @Param("goukei") Integer goukei, @Param("zaiko") Integer zaiko);
+	public void updateCart(@Param("name") String name, @Param("kosuu") Integer kosuu, @Param("goukei") Integer goukei, @Param("zaiko") Integer zaiko, @Param("price") Integer price,@Param("orderDay") Date orderDay);
 	
 	/**発注情報記録*/
 	public int order(Materials materials);
