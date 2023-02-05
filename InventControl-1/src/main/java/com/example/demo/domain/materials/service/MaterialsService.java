@@ -30,6 +30,9 @@ public interface MaterialsService {
 	
 	/**資材発注処理*/
 	public void updateCart(String name,Integer kosuu, Integer goukei, Integer zaiko);
+	
+	/**資材登録*/
+	public void signupOrder(Materials materials);
 
 
 

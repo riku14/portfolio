@@ -9,3 +9,11 @@ CREATE TABLE IF NOT EXISTS materials (
   , goukei INT
   ,orderDay DATE
 );
+
+/*発注情報テーブル*/
+CREATE TABLE IF NOT EXISTS orderList (
+    name VARCHAR(50) PRIMARY KEY
+  , kosuu INT
+  , goukei INT
+   ,orderDay DATE
+   );

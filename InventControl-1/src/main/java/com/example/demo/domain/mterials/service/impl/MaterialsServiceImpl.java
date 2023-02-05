@@ -60,5 +60,11 @@ public class MaterialsServiceImpl implements MaterialsService {
 		mapper.updateCart(name, kosuu, goukei, zaiko);
 	}
 	
+	/**資材発注情報記録*/
+	@Override
+	public void signupOrder(Materials materials) {
+		mapper.order(materials);
+	}
+	
 
 }

@@ -73,6 +73,11 @@
     where name = #{name}
     </update>
     
+    <!--資材発注情報記録-->
+    <insert id="order">
+    insert into orderList from materials 
+     where name = #{name}
+    </insert>
     
     
 </mapper>

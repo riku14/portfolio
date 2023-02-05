@@ -34,6 +34,9 @@ public interface MaterialsMapper {
 	
 	/**資材発注処理*/
 	public void updateCart(@Param("name") String name, @Param("kosuu") Integer kosuu, @Param("goukei") Integer goukei, @Param("zaiko") Integer zaiko);
+	
+	/**発注情報記録*/
+	public int order(Materials materials);
 
 	
 	
