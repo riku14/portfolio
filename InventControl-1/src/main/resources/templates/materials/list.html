@@ -42,7 +42,7 @@
                         <td th:text="${item.name}"></td>
                         <td th:text="${item.tekisei}"></td>
                         <td th:text="${item.zaiko}"></td>
-                        <td th:text="${item.price}"></td>
+                        <td th:text="${#numbers.formatInteger(item.price, 3, 'COMMA')}"></td>
                         <td th:text="${item.detail}"></td>
                         <td>
                             <a class="btn btn-primary" th:href="@{'/materials/edit/' + ${item.name}}">
