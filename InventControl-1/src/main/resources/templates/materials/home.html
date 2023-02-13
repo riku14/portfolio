@@ -13,13 +13,25 @@
         <div class="header border-bottom">
           <h1 class="h2">HOME</h1>
         </div>
+        
         <div class="wrap">
           <div class="item">
               <a th:href="@{'/materials/list'}">
-                <img src = "../images/logout.jpeg" alt = "資材詳細一覧">
+                <img th:src = "@{../images/list.jpg}" alt = "資材詳細一覧">
                 <h2>資材詳細一覧</h2>
               </a>
           </div>
+          
+         
+          <div class="item">
+              <a th:href="@{'/materials/signup'}">
+                <img th:src = "@{../images/materialsSignup.jpg}" alt = "資材登録">
+                <h2>資材登録</h2>
+              </a>          
+          </div>
+         
+         
+          
         </div>
     </div>    
 </body>
